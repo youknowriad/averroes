@@ -108,7 +108,7 @@ const getBlockTypeParserHelper = blockType => {
       P.seqMap(
         P.string("{%")
           .then(P.whitespace)
-          .then(P.string("name=core/paragraph"))
+          .then(P.string("name=" + blockType.name))
           .then(JSONParser.value.trim(P.optWhitespace))
           .skip(P.string("%}")),
         innerBlockParser.trim(r.newline),

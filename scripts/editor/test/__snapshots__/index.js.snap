@@ -82,6 +82,20 @@ Array [
 ]
 `;
 
+exports[`integration Should parse an image block with extra attributes 1`] = `
+Array [
+  Object {
+    "attributes": Object {
+      "alt": "Textual alternative",
+      "caption": Array [],
+      "id": 599,
+      "url": "http://myawesomeimage.tld",
+    },
+    "name": "core/image",
+  },
+]
+`;
+
 exports[`integration Should parse an quote block 1`] = `
 Array [
   Object {
