@@ -11,6 +11,17 @@ Array [
 ]
 `;
 
+exports[`integration Should parse a code block using leading spaces 1`] = `
+Array [
+  Object {
+    "attributes": Object {
+      "content": "const thisIsJavaScript = true;\nthisIsAlsoCode = true;",
+    },
+    "name": "core/code",
+  },
+]
+`;
+
 exports[`integration Should parse a heading block 1`] = `
 Array [
   Object {

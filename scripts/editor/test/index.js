@@ -95,6 +95,15 @@ This is just a simple ** markdown ** text
     isIdempotent(parsed);
   });
 
+  it("Should parse a code block using leading spaces", () => {
+    const markdown =
+      "    const thisIsJavaScript = true;\n    thisIsAlsoCode = true;";
+    const parsed = parse(markdown);
+
+    expect(parsed).toMatchSnapshot();
+    isIdempotent(parsed);
+  });
+
   it("Should parse an image block with extra attributes", () => {
     const markdown = `{% name=core/image {"caption": [], "id": 599} %}
 ![Textual alternative](http://myawesomeimage.tld)

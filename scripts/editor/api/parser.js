@@ -18,14 +18,24 @@ const helpers = {
   },
   codeblock(r) {
     return P.alt(
-      P.regex(/[^`]/),
-      P.string("`").notFollowedBy(P.string("``")),
-      r.newline
-    )
-      .atLeast(1)
-      .tie()
-      .wrap(P.string("```"), P.string("```"))
-      .map(content => content.trim("\n"));
+      P.alt(
+        P.regex(/[^`]/),
+        P.string("`").notFollowedBy(P.string("``")),
+        r.newline
+      )
+        .atLeast(1)
+        .tie()
+        .wrap(P.string("```"), P.string("```"))
+        .map(content => content.trim("\n")),
+      P.string("    ")
+        .then(
+          P.regex(/[^\r\n]/)
+            .many()
+            .tie()
+        )
+        .sepBy1(r.newline)
+        .map(lines => lines.join("\n"))
+    );
   },
   quote(r) {
     return P.string(">")
