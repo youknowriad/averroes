@@ -9,6 +9,9 @@ const helpers = {
       .map(helpers.node)
       .join("");
   },
+  codeblock(value) {
+    return "```\n" + value + "\n```";
+  },
   quote(value) {
     return value.map(subvalue => "> " + helpers.paragraph(subvalue)).join("\n");
   },

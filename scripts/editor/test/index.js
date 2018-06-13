@@ -86,4 +86,12 @@ This is just a simple ** markdown ** text
     expect(parsed).toMatchSnapshot();
     isIdempotent(parsed);
   });
+
+  it("Should parse a code block", () => {
+    const markdown = "```\nconst thisIsJavaScript = true;\n```";
+    const parsed = parse(markdown);
+
+    expect(parsed).toMatchSnapshot();
+    isIdempotent(parsed);
+  });
 });

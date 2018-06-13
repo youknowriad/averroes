@@ -1,5 +1,16 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`integration Should parse a code block 1`] = `
+Array [
+  Object {
+    "attributes": Object {
+      "content": "const thisIsJavaScript = true;",
+    },
+    "name": "core/code",
+  },
+]
+`;
+
 exports[`integration Should parse a heading block 1`] = `
 Array [
   Object {
@@ -64,7 +75,7 @@ Array [
   Object {
     "attributes": Object {
       "alt": "Image alt text",
-      "href": "http://myawesomeimage.tld",
+      "url": "http://myawesomeimage.tld",
     },
     "name": "core/image",
   },

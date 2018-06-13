@@ -16,6 +16,17 @@ const helpers = {
       })
     );
   },
+  codeblock(r) {
+    return P.alt(
+      P.regex(/[^`]/),
+      P.string("`").notFollowedBy(P.string("``")),
+      r.newline
+    )
+      .atLeast(1)
+      .tie()
+      .wrap(P.string("```"), P.string("```"))
+      .map(content => content.trim("\n"));
+  },
   quote(r) {
     return P.string(">")
       .then(P.optWhitespace)
