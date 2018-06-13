@@ -12,6 +12,7 @@
   "author": "Riad Benguella",
   "license": "GPL-2.0-or-later",
   "dependencies": {
+    "classnames": "^2.2.6",
     "install": "^0.11.0",
     "lodash": "^4.17.10",
     "npm": "^6.1.0",
