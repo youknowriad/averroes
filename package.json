@@ -1,0 +1,56 @@
+{
+  "name": "averroes",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Pretty sure Averroes used markdown to write his thoughts",
+  "main": "src/index.js",
+  "keywords": [
+    "gutenberg",
+    "markdown",
+    "wordpress"
+  ],
+  "author": "Riad Benguella",
+  "license": "GPL-2.0-or-later",
+  "dependencies": {
+    "install": "^0.11.0",
+    "lodash": "^4.17.10",
+    "npm": "^6.1.0",
+    "parsimmon": "^1.7.3",
+    "simplemde": "^1.11.2"
+  },
+  "devDependencies": {
+    "@wordpress/babel-plugin-makepot": "^1.0.0",
+    "@wordpress/babel-preset-default": "^1.1.0",
+    "@wordpress/browserslist-config": "^2.1.0",
+    "@wordpress/i18n": "^1.0.0",
+    "@wordpress/scripts": "^1.2.0",
+    "autoprefixer": "^7.1.6",
+    "babel-core": "^6.26.0",
+    "babel-eslint": "^8.2.3",
+    "babel-loader": "^7.1.2",
+    "babel-plugin-transform-async-generator-functions": "^6.24.1",
+    "cross-env": "^5.1.1",
+    "eslint": "^4.19.1",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-plugin-jest": "^21.17.0",
+    "eslint-plugin-prettier": "^2.6.0",
+    "eslint-plugin-react": "^7.7.0",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "node-sass": "^4.7.2",
+    "postcss-loader": "^2.0.9",
+    "prettier": "^1.9.1",
+    "raw-loader": "^0.5.1",
+    "sass-loader": "^6.0.6",
+    "webpack": "^3.8.1"
+  },
+  "browserslist": [
+    "extends @wordpress/browserslist-config"
+  ],
+  "scripts": {
+    "lint": "eslint scripts",
+    "build": "cross-env BABEL_ENV=default NODE_ENV=production webpack",
+    "dev": "cross-env BABEL_ENV=default webpack --watch",
+    "package-plugin": "./bin/build-plugin-zip.sh",
+    "test": "wp-scripts test-unit-js"
+  }
+}

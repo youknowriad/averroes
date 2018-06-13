@@ -1,0 +1,18 @@
+/**
+ * Breakpoints & Media Queries
+ */
+$break-huge: 1440px;
+$break-wide: 1280px;
+$break-large: 960px; // admin sidebar auto folds
+$break-medium: 782px; // adminbar goes big
+$break-small: 600px;
+$break-mobile: 480px;
+
+$admin-sidebar-width: 160px;
+$admin-sidebar-width-big: 190px;
+$admin-sidebar-width-collapsed: 36px;
+
+$admin-bar-height: 32px;
+$admin-bar-height-big: 46px;
+
+$gutenberg-header-height: 56px;

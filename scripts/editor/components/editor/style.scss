@@ -1,0 +1,75 @@
+@import "../../assets/mixins";
+
+@include editor-left(".gutenberg .averroes-editor-editor");
+@include editor-top(".gutenberg .averroes-editor-editor");
+.gutenberg .averroes-editor-editor {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+
+  .components-panel {
+    height: 100%;
+  }
+
+  .editor-post-title {
+    padding: 0;
+    margin-top: 35px;
+
+    .editor-post-title__block {
+      padding: 0;
+
+      textarea {
+        border: 1px solid transparent !important;
+        outline: none !important;
+      }
+    }
+
+    .editor-post-permalink {
+      left: 0;
+      right: 0;
+      border: none !important;
+    }
+  }
+}
+
+.averroes-editor-editor__scrollable {
+  height: 100%;
+  padding: 0 !important;
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  @include break-small() {
+    height: calc(100% - 100px);
+    margin-top: 50px;
+  }
+
+  @include break-medium() {
+    height: calc(100% - 50px);
+    margin-top: 0;
+  }
+}
+
+.gutenberg .averroes-editor-editor .CodeMirror {
+  min-height: calc(100% - 120px);
+  height: auto;
+  overflow: visible !important;
+  width: 100%;
+  border: none;
+  resize: none;
+  z-index: 0;
+  padding: 22px;
+  cursor: text;
+
+  .CodeMirror-scroll {
+    overflow: visible !important;
+  }
+
+  .CodeMirror-placeholder {
+    color: #999;
+  }
+}
+
+.averroes-hide-editor {
+  display: none !important;
+}

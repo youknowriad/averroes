@@ -1,0 +1,147 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`integration Should parse a heading block 1`] = `
+Array [
+  Object {
+    "attributes": Object {
+      "content": Array [
+        "Heading 2nd level",
+      ],
+      "nodeName": "H2",
+    },
+    "name": "core/heading",
+  },
+]
+`;
+
+exports[`integration Should parse a paragraph block 1`] = `
+Array [
+  Object {
+    "attributes": Object {
+      "content": Array [
+        "This is just a simple ",
+        Object {
+          "props": Object {
+            "children": Array [
+              "markdown",
+            ],
+          },
+          "type": "strong",
+        },
+        " text",
+      ],
+    },
+    "name": "core/paragraph",
+  },
+]
+`;
+
+exports[`integration Should parse a paragraph block with extra attributes 1`] = `
+Array [
+  Object {
+    "attributes": Object {
+      "content": Array [
+        "This is just a simple ",
+        Object {
+          "props": Object {
+            "children": Array [
+              " markdown ",
+            ],
+          },
+          "type": "strong",
+        },
+        " text",
+      ],
+      "dropCap": true,
+    },
+    "name": "core/paragraph",
+  },
+]
+`;
+
+exports[`integration Should parse an image block 1`] = `
+Array [
+  Object {
+    "attributes": Object {
+      "alt": "Image alt text",
+      "href": "http://myawesomeimage.tld",
+    },
+    "name": "core/image",
+  },
+]
+`;
+
+exports[`integration Should parse an quote block 1`] = `
+Array [
+  Object {
+    "attributes": Object {
+      "value": Array [
+        Object {
+          "children": Object {
+            "props": Object {
+              "children": Array [
+                "This is just a simple quote",
+              ],
+            },
+            "type": "p",
+          },
+        },
+      ],
+    },
+    "name": "core/quote",
+  },
+]
+`;
+
+exports[`integration Should parse multiple headings block 1`] = `
+Array [
+  Object {
+    "attributes": Object {
+      "content": Array [
+        "Heading 2nd level",
+      ],
+      "nodeName": "H2",
+    },
+    "name": "core/heading",
+  },
+  Object {
+    "attributes": Object {
+      "content": Array [
+        "Another heading",
+      ],
+      "nodeName": "H3",
+    },
+    "name": "core/heading",
+  },
+]
+`;
+
+exports[`integration Should parse multiple paragraph blocks 1`] = `
+Array [
+  Object {
+    "attributes": Object {
+      "content": Array [
+        "		This is just a simple ",
+        Object {
+          "props": Object {
+            "children": Array [
+              "markdown",
+            ],
+          },
+          "type": "strong",
+        },
+        " text",
+      ],
+    },
+    "name": "core/paragraph",
+  },
+  Object {
+    "attributes": Object {
+      "content": Array [
+        "		This is should produce two paragraphs",
+      ],
+    },
+    "name": "core/paragraph",
+  },
+]
+`;
