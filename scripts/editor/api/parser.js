@@ -5,6 +5,26 @@ import JSONParser from "./json";
 import { getBlockTypes } from "./registration";
 
 const helpers = {
+  blockheader() {
+    return P.seqMap(
+      P.string("{%")
+        .then(P.whitespace)
+        .then(P.string("name="))
+        .then(P.regex(/[a-z][a-z0-9-]*\/[a-z][a-z0-9-]*/))
+        .skip(P.whitespace),
+      JSONParser.value.trim(P.optWhitespace).skip(P.string("%}")),
+      (name, attributes) => ({
+        name,
+        attributes
+      })
+    );
+  },
+  blockfooter() {
+    return P.string("{% end %}");
+  },
+  fallback(r) {
+    return r.blockheader.skip(r.newline.atLeast(1).then(r.blockfooter));
+  },
   heading(r) {
     return P.seqMap(
       P.string("#").atLeast(1),
@@ -139,7 +159,12 @@ export const parse = content => {
     Object.assign(
       {
         blocks(r) {
-          return P.alt(...getBlockTypes().map(block => r[block.name]))
+          return P.alt(
+            r.fallback.map(({ name, attributes }) =>
+              createBlock(name, attributes)
+            ),
+            ...getBlockTypes().map(block => r[block.name])
+          )
             .sepBy(r.newline.atLeast(1))
             .trim(r.newline.many());
         }

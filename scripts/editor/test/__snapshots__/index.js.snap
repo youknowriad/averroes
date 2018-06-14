@@ -15,7 +15,8 @@ exports[`integration Should parse a code block using leading spaces 1`] = `
 Array [
   Object {
     "attributes": Object {
-      "content": "const thisIsJavaScript = true;\nthisIsAlsoCode = true;",
+      "content": "const thisIsJavaScript = true;
+thisIsAlsoCode = true;",
     },
     "name": "core/code",
   },
@@ -125,6 +126,17 @@ Array [
       ],
     },
     "name": "core/quote",
+  },
+]
+`;
+
+exports[`integration Should parse an unknown block 1`] = `
+Array [
+  Object {
+    "attributes": Object {
+      "randomAttribute": "randomValue",
+    },
+    "name": "custom/unknown",
   },
 ]
 `;

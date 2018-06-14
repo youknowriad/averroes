@@ -113,4 +113,13 @@ This is just a simple ** markdown ** text
     expect(parsed).toMatchSnapshot();
     isIdempotent(parsed);
   });
+
+  it("Should parse an unknown block", () => {
+    const markdown =
+      '{% name=custom/unknown {"randomAttribute":"randomValue"} %}\n{% end %}';
+    const parsed = parse(markdown);
+
+    expect(parsed).toMatchSnapshot();
+    isIdempotent(parsed);
+  });
 });

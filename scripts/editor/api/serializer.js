@@ -46,33 +46,43 @@ export const serialize = blocks => {
   return blocks
     .map(block => {
       const blockType = getBlockType(block.name);
-      const rootBlockType = getRootBlockType(block.name);
-      const wrapperAttributes = Object.entries(block.attributes)
-        .filter(([attribute, value]) => {
+      if (blockType) {
+        const rootBlockType = getRootBlockType(block.name);
+        const wrapperAttributes = Object.entries(block.attributes)
+          .filter(([attribute, value]) => {
+            return (
+              blockType.markdownAttributes &&
+              blockType.markdownAttributes.indexOf(attribute) === -1 &&
+              !isEqual(
+                get(rootBlockType.attributes, [attribute, "default"]),
+                value
+              )
+            );
+          })
+          .map(([attribute]) => attribute);
+        const serial = blockType.serialize(helpers)(block.attributes);
+        if (wrapperAttributes.length) {
           return (
-            blockType.markdownAttributes &&
-            blockType.markdownAttributes.indexOf(attribute) === -1 &&
-            !isEqual(
-              get(rootBlockType.attributes, [attribute, "default"]),
-              value
-            )
+            "{% name=" +
+            blockType.name +
+            " " +
+            JSON.stringify(pick(block.attributes, wrapperAttributes)) +
+            " %}\n" +
+            serial +
+            "\n{% end %}"
           );
-        })
-        .map(([attribute]) => attribute);
-      const serial = blockType.serialize(helpers)(block.attributes);
-      if (wrapperAttributes.length) {
-        return (
-          "{% name=" +
-          blockType.name +
-          " " +
-          JSON.stringify(pick(block.attributes, wrapperAttributes)) +
-          " %}\n" +
-          serial +
-          "\n{% end %}"
-        );
-      }
+        }
 
-      return serial;
+        return serial;
+      }
+      return (
+        "{% name=" +
+        block.name +
+        " " +
+        JSON.stringify(block.attributes) +
+        " %}" +
+        "\n{% end %}"
+      );
     })
     .join("\n\n");
 };
