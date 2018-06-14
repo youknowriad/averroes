@@ -2,7 +2,7 @@
 Contributors: youknowriad
 Requires at least: 4.9
 Tested up to: 4.9.6
-Stable tag: 1.0.0
+Stable tag: 1.0.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: gutenberg,editor,markdown,averroes
@@ -12,7 +12,7 @@ A Gutenberg compatible markdown editor. Write in Markdown, edit in Markdown and 
 
 == Description ==
 
-Averroes is a markdow editor capable of understanding and update Gutenberg blocks using markdown.
+Averroes is a markdonw editor capable of understanding and updating Gutenberg blocks using markdown.
 
 = Features =
 
@@ -25,6 +25,9 @@ Averroes is a markdow editor capable of understanding and update Gutenberg block
 This plugin is being worked on in <a href="https://github.com/youknowriad/averroes">GitHub</a>
 
 == Changelog ==
+
+= 1.0.1 =
+* Fix bug for unhandled blocks (blocks without markdown implementation)
 
 = 1.0.0 =
 * Initial release
