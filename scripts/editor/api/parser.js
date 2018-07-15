@@ -57,6 +57,16 @@ const helpers = {
         .map(lines => lines.join("\n"))
     );
   },
+  list(r) {
+    return P.string("*")
+      .or(P.string("-"))
+      .then(P.whitespace)
+      .then(r.paragraph)
+      .sepBy1(r.newline)
+      .map(values =>
+        values.map(value => ({ type: "li", props: { children: value } }))
+      );
+  },
   quote(r) {
     return P.string(">")
       .then(P.optWhitespace)

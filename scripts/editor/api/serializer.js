@@ -15,6 +15,12 @@ const helpers = {
   quote(value) {
     return value.map(subvalue => "> " + helpers.paragraph(subvalue)).join("\n");
   },
+  list(values) {
+    return values
+      .filter(subvalue => subvalue.type === "li")
+      .map(subvalue => "* " + helpers.paragraph(subvalue.props.children))
+      .join("\n");
+  },
   heading(value) {
     return repeat("#", value.level) + " " + helpers.paragraph(value.content);
   },
@@ -46,7 +52,10 @@ export const serialize = blocks => {
   return blocks
     .map(block => {
       const blockType = getBlockType(block.name);
-      if (blockType) {
+      if (
+        blockType &&
+        (!blockType.supports || blockType.supports(block.attributes))
+      ) {
         const rootBlockType = getRootBlockType(block.name);
         const wrapperAttributes = Object.entries(block.attributes)
           .filter(([attribute, value]) => {

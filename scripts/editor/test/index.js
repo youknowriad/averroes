@@ -122,4 +122,13 @@ This is just a simple ** markdown ** text
     expect(parsed).toMatchSnapshot();
     isIdempotent(parsed);
   });
+
+  it("Should parse a list block", () => {
+    const markdown =
+      "* This is just a simple list\n* This is another list item";
+    const parsed = parse(markdown);
+
+    expect(parsed).toMatchSnapshot();
+    isIdempotent(parsed);
+  });
 });

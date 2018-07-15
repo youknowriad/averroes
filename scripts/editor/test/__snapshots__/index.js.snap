@@ -37,6 +37,34 @@ Array [
 ]
 `;
 
+exports[`integration Should parse a list block 1`] = `
+Array [
+  Object {
+    "attributes": Object {
+      "values": Array [
+        Object {
+          "props": Object {
+            "children": Array [
+              "This is just a simple list",
+            ],
+          },
+          "type": "li",
+        },
+        Object {
+          "props": Object {
+            "children": Array [
+              "This is another list item",
+            ],
+          },
+          "type": "li",
+        },
+      ],
+    },
+    "name": "core/list",
+  },
+]
+`;
+
 exports[`integration Should parse a paragraph block 1`] = `
 Array [
   Object {
