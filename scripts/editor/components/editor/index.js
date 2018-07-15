@@ -19,7 +19,6 @@ class Editor extends Component {
       value: props.markdown
     };
     this.onChange = this.onChange.bind(this);
-    this.bindEditor = this.bindEditor.bind(this);
   }
 
   static getDerivedStateFromProps(props) {
@@ -42,14 +41,7 @@ class Editor extends Component {
 
   onChange(value) {
     this.setState({ value });
-  }
-
-  onBlur() {
-    this.props.onChange(parse(this.state.value));
-  }
-
-  bindEditor(editor) {
-    editor.on("blur", () => this.props.onChange(parse(this.state.value)));
+    this.props.onChange(parse(value));
   }
 
   render() {
@@ -63,7 +55,6 @@ class Editor extends Component {
             <CodeEditor
               value={value}
               onChange={this.onChange}
-              editorRef={this.bindEditor}
               settings={{
                 codemirror: {
                   lineWrapping: true,
