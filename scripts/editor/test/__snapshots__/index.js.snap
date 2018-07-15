@@ -30,7 +30,7 @@ Array [
       "content": Array [
         "Heading 2nd level",
       ],
-      "nodeName": "H2",
+      "level": 2,
     },
     "name": "core/heading",
   },
@@ -148,7 +148,7 @@ Array [
       "content": Array [
         "Heading 2nd level",
       ],
-      "nodeName": "H2",
+      "level": 2,
     },
     "name": "core/heading",
   },
@@ -157,7 +157,7 @@ Array [
       "content": Array [
         "Another heading",
       ],
-      "nodeName": "H3",
+      "level": 3,
     },
     "name": "core/heading",
   },

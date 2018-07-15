@@ -1,21 +1,16 @@
 const headingBlock = {
   name: "core/heading",
 
-  markdownAttributes: ["content", "nodeName"],
+  markdownAttributes: ["content", "level"],
 
   parse(r) {
-    return r.heading.map(value => ({
-      content: value.content,
-      nodeName: "H" + value.level
-    }));
+    return r.heading;
   },
 
   serialize(r) {
-    return attributes =>
-      r.heading({
-        level: parseInt(attributes.nodeName.substring(1), 10),
-        content: attributes.content
-      });
+    return attributes => {
+      return r.heading(attributes);
+    };
   }
 };
 
