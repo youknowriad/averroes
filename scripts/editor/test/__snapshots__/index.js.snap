@@ -122,6 +122,18 @@ Array [
 ]
 `;
 
+exports[`integration Should parse an image block with an empty alt 1`] = `
+Array [
+  Object {
+    "attributes": Object {
+      "alt": "",
+      "url": "http://myawesomeimage.tld",
+    },
+    "name": "core/image",
+  },
+]
+`;
+
 exports[`integration Should parse an image block with extra attributes 1`] = `
 Array [
   Object {

@@ -106,7 +106,7 @@ const helpers = {
   },
   image() {
     return P.seqMap(
-      P.regex(/[^\]\r\n]+/).wrap(P.string("!["), P.string("]")),
+      P.regex(/[^\]\r\n]*/).wrap(P.string("!["), P.string("]")),
       P.regex(/[^)\r\n]+/).wrap(P.string("("), P.string(")")),
       (text, link) => ({
         type: "img",

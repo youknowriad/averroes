@@ -79,6 +79,14 @@ This is just a simple ** markdown ** text
     isIdempotent(parsed);
   });
 
+  it("Should parse an image block with an empty alt", () => {
+    const markdown = "![](http://myawesomeimage.tld)";
+    const parsed = parse(markdown);
+
+    expect(parsed).toMatchSnapshot();
+    isIdempotent(parsed);
+  });
+
   it("Should parse an quote block", () => {
     const markdown = "> This is just a simple quote";
     const parsed = parse(markdown);
