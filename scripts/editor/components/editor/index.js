@@ -1,4 +1,4 @@
-import { compose, Component } from "@wordpress/element";
+import { Component } from "@wordpress/element";
 import { withSelect, withDispatch } from "@wordpress/data";
 import {
   CodeEditor,
@@ -8,6 +8,7 @@ import {
 } from "@wordpress/components";
 import { __ } from "@wordpress/i18n";
 import { PostTitle } from "@wordpress/editor";
+import { compose } from "@wordpress/compose";
 
 import "./style.scss";
 import { parse, serialize } from "../../api";

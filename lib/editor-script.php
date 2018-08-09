@@ -9,7 +9,7 @@ function averroes_editor_script_register() {
 	wp_register_script(
 		'averroes-editor',
 		averroes_url( 'build/editor/index.js' ),
-		array( 'wp-plugins', 'wp-edit-post', 'averroes-i18n', 'lodash', 'wp-i18n', 'wp-data', 'wp-element', 'wp-blocks', 'wp-editor', 'wp-components' ),
+		array( 'wp-plugins', 'wp-edit-post', 'averroes-i18n', 'lodash', 'wp-i18n', 'wp-data', 'wp-element', 'wp-blocks', 'wp-editor', 'wp-components', 'wp-compose' ),
 		filemtime( averroes_dir_path() . 'build/editor/index.js' ),
 		true
 	);
