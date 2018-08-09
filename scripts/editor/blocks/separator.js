@@ -1,4 +1,4 @@
-const P = require("parsimmon");
+import P from "parsimmon";
 
 const separatorBlock = {
   name: "core/separator",

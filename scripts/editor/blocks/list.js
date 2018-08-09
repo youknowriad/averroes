@@ -1,4 +1,4 @@
-import { some, last, filter } from "lodash";
+import { some } from "lodash";
 
 const listBlock = {
   name: "core/list",

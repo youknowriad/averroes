@@ -1,4 +1,4 @@
-import { Component } from "@wordpress/element";
+import { createElement, Component } from "@wordpress/element";
 import { withSelect, withDispatch } from "@wordpress/data";
 import {
   CodeEditor,
