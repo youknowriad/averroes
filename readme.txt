@@ -12,7 +12,7 @@ A Gutenberg compatible markdown editor. Write in Markdown, edit in Markdown and 
 
 == Description ==
 
-Averroes is a markdonw editor capable of understanding and updating Gutenberg blocks using markdown.
+Averroes is a markdown editor capable of understanding and updating Gutenberg blocks using markdown.
 
 = Features =
 
