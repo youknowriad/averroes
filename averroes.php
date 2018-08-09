@@ -3,7 +3,7 @@
  * Plugin Name: Averroes
  * Plugin URI: https://github.com/youknowriad/averroes
  * Description: A Gutenberg compatible markdown editor. Write in Markdown, edit in Markdown and preview in HTML.
- * Version: 1.1.0
+ * Version: 1.1.1
  * Text Domain: averroes
  * Domain Path: /languages
  * Author: Riad Benguella

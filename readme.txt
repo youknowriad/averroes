@@ -2,7 +2,7 @@
 Contributors: youknowriad
 Requires at least: 4.9
 Tested up to: 4.9.6
-Stable tag: 1.1.0
+Stable tag: 1.1.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: gutenberg,editor,markdown,averroes
@@ -25,6 +25,11 @@ Averroes is a markdown editor capable of understanding and updating Gutenberg bl
 This plugin is being worked on in <a href="https://github.com/youknowriad/averroes">GitHub</a>
 
 == Changelog ==
+
+= 1.1.1
+* Compatibility with Gutenberg 3.5
+* Fix image blocks with empty alt
+* Update npm dependencies
 
 = 1.1.0
 * Add support for non-nested lists
